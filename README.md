@@ -13,7 +13,10 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/Master2-IAFA/65307369?style=social)
 
 
-# **Projet Chef d'œuvre ** 
+
+<img src="./Diagrams/SOIVD-logo-gif.gif">
+
+# **Projet Chef d'œuvre** 
 ### **Université Toulouse III - Paul Sabatier**
 
 Membres du groupe :
@@ -54,6 +57,12 @@ Un accès uniforme à des sources multiples, autonomes et hétérogènes et stru
 
 ## Installation
 
+Use the package manager `pip` to install     
+```bash
+pip install -r requirements.txt
+```
+OR      
+
 Use the package manager `pip` to install 
 
 ```bash
@@ -81,7 +90,7 @@ urllib : https://docs.python.org/fr/3/library/urllib.html
 
 BeautifulSoup : https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 
-contextlib
+contextlib : https://docs.python.org/3/library/contextlib.html
 
 ## Conception
 La figure ci-dessus représente l’architecture adoptée pour la réalisation du présent projet. Il s’agit d’une architecture Adaptateur-Médiateur dont on va utiliser l’approche GAV
