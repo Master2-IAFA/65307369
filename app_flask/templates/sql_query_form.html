@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Query</title>
+</head>
+<body>
+  
+  
+  <div class="formContaint2">
+
+      <div class="header">
+        <h1>Bienvenue sur  SOIVD </h1>
+      </div>
+      <hr>
+      <form class="form" action="{{url_for('post_submit_sql')}}" method="POST">
+        <!--Choosing Region -->
+        <div class="form-group" >
+          <label for="region">Précisez la région :</label>
+          <select class="form-control" id="region" name="region">
+            <option>Auvergne-Rhône-Alpes </option>
+            <option>Bourgogne-Franche-Comté</option>
+            <option>Bretagne</option>
+            <option>Centre-Val de Loire</option>
+            <option>Corse</option>
+            <option>Grand-Est</option>
+            <option>Hauts-de-France</option>
+            <option>Île-de-France</option>
+            <option>Normandie</option>
+            <option>Nouvelle-Aquitaine</option>
+            <option>Occitanie</option>
+            <option>Pays de la Loire</option>
+            <option>Provence-Alpes-Côte d'Azur</option>
+          </select>          
+        </div>
+        
+        <!--Choosing Row -->
+        <div class="container">
+          <label for="colonnes">Choisir les infos souhaitées : </label> <hr>
+          <div class="row ">
+            <div class="col">
+    
+              <input type="checkbox" id="region_row"   style="justify-self: start;"  name="region_row" value="region">
+              <label for="region_row"> Region </label>
+              <br>
+              <input type="checkbox" id="date_heure"   style="justify-self: start;"  name="date_heure" value="date_heure">
+              <label for="date_heure"> Date_Heure </label>
+              <br>
+              <label for="date"><input type="checkbox" id="date"   style="justify-self: start;"  name="date" value="date"> Date </label><br>
+              <label for="heure"><input type="checkbox" id="heure"   style="justify-self: start;"  name="heure" value="heure"> Heure </label><br>
+
+              <label for="part_logement_sociaux_geres_sem"><input type="checkbox" id="part_logement_sociaux_geres_sem"   style="justify-self: start;"  name="part_logement_sociaux_geres_sem" value="part_logement_sociaux_geres_sem"> part_logement_sociaux/sem </label><br>
+              <label for="nbre_logements"><input type="checkbox" id="nbre_logements"   style="justify-self: start;"  name="nbre_logements" value="nbre_logements"> nbre_logements </label><br>
+              <label for="nbre_bailleurs_consolide"><input type="checkbox" id="nbre_bailleurs_consolide"   style="justify-self: start;"  name="nbre_bailleurs_consolide" value="nbre_bailleurs_consolide"> nbre_bailleurs_consolide </label><br>
+              <label for="com_arm_code"><input type="checkbox" id="com_arm_code"   style="justify-self: start;"  name="com_arm_code" value="com_arm_code"> com_arm_code </label><br>
+              <label for="com_arm_pop_cap"><input type="checkbox" id="com_arm_pop_cap"   style="justify-self: start;"  name="com_arm_pop_cap" value="com_arm_pop_cap"> com_arm_pop_cap </label><br>
+
+            </div>
+            <div class="col">
+              <label for="code_insee_region"><input type="checkbox" id="code_insee_region"   style="justify-self: start;"  name="code_insee_region" value="code_insee_region"> code_insee_region </label><br>
+              <label for="consommation_brute_electricite_rte"><input type="checkbox" id="consommation_brute_electricite_rte"   style="justify-self: start;"  name="consommation_brute_electricite_rte" value="consommation_brute_electricite_rte"> consommation_brute_electricite_rte </label><br>
+              <label for="consommation_brute_totale"><input type="checkbox" id="consommation_brute_totale"   style="justify-self: start;"  name="consommation_brute_totale" value="consommation_brute_totale"> consommation_brute_totale </label><br>
+              <label for="annee"><input type="checkbox" id="annee"   style="justify-self: start;"  name="annee" value="annee"> Annee </label><br>
+            
+              <label for="part_logement_sociaux_geres_oph"><input type="checkbox" id="part_logement_sociaux_geres_oph"   style="justify-self: start;"  name="part_logement_sociaux_geres_oph" value="part_logement_sociaux_geres_oph"> part_logement_sociaux_geres_oph </label><br>
+              <label for="com_arm_pop_tot"><input type="checkbox" id="com_arm_pop_tot"   style="justify-self: start;"  name="com_arm_pop_tot" value="com_arm_pop_tot"> com_arm_pop_tot </label><br>
+              <label for="arrdep_code"><input type="checkbox" id="arrdep_code"   style="justify-self: start;"  name="arrdep_code" value="arrdep_code"> arrdep_code </label><br>
+              <label for="com_arm_name"><input type="checkbox" id="com_arm_name"   style="justify-self: start;"  name="com_arm_name" value="com_arm_name"> com_arm_name </label><br>
+              <label for="dep_code"><input type="checkbox" id="dep_code"   style="justify-self: start;"  name="dep_code" value="dep_code"> Dep_code </label><br>
+              <label for="nbre_bailleurs"><input type="checkbox" id="nbre_bailleurs"   style="justify-self: start;"  name="nbre_bailleurs" value="nbre_bailleurs"> nbre_bailleurs </label><br>
+
+              
+            </div>
+            
+            <div class="col">
+              <label for="consommation_brute_gaz_totale"><input type="checkbox" id="consommation_brute_gaz_totale"   style="justify-self: start;"  name="consommation_brute_gaz_totale" value="consommation_brute_gaz_totale"> consommation_brute_gaz_totale </label><br>
+              <label for="energie_injectee"><input type="checkbox" id="energie_injectee"   style="justify-self: start;"  name="energie_injectee" value="energie_injectee"> energie_injectee </label><br>
+              <label for="nb_points_injection"><input type="checkbox" id="nb_points_injection"   style="justify-self: start;"  name="nb_points_injection" value="nb_points_injection"> nb_points_injection </label><br>
+              <label for="com_arm_pop_mun"><input type="checkbox" id="com_arm_pop_mun"   style="justify-self: start;"  name="com_arm_pop_mun" value="com_arm_pop_mun"> com_arm_pop_mun </label><br>
+              <label for="start_year"><input type="checkbox" id="start_year"   style="justify-self: start;"  name="start_year" value="start_year"> Start_year </label><br>
+              <label for="geo_year"><input type="checkbox" id="geo_year"   style="justify-self: start;"  name="geo_year" value="geo_year"> Geo_year </label><br>
+              <label for="census_year"><input type="checkbox" id="census_year"   style="justify-self: start;"  name="census_year" value="census_year"> Census_year </label><br>
+
+              <label for="part_logements_sociaux_geres_autres_bailleurs"><input type="checkbox" id="part_logements_sociaux_geres_autres_bailleurs"   style="justify-self: start;"  name="part_logements_sociaux_geres_autres_bailleurs" value="part_logements_sociaux_geres_autres_bailleurs"> part_logements_sociaux_autres_bailleurs </label><br>
+              <label for="nbre_bailleurs"><input type="checkbox" id="nbre_bailleurs"   style="justify-self: start;"  name="nbre_bailleurs" value="nbre_bailleurs"> nbre_bailleurs </label><br>
+              <label for="part_logement_sociaux_geres_esh"><input type="checkbox" id="part_logement_sociaux_geres_esh"   style="justify-self: start;"  name="part_logement_sociaux_geres_esh" value="part_logement_sociaux_geres_esh"> part_logement_sociaux_geres_esh </label><br>
+              
+            
+            </div>
+          </div>
+        </div>
+        
+      
+        <!--Restrictions -->
+        <div class="form-group" >
+          <label for="restriction">Restrictions : Séparer les par "and" ! </label>
+          <input type="text" class="form-control" name="restriction" id="restriction" placeholder="Exemple : code_insee = 3500 and tmin = 0" required>
+
+        </div>
+        <br> <br>
+        <div class="btnContainer">
+          <button  type="submit" href='/post_submit_sql' class="btn btn-primary">Submit</button>
+          <a href="/" class="btn btn-primary stretched-link">Home </a>
+          <a href="/infos" class="btn btn-primary stretched-link">Infos </a>
+
+
+        </div>
+        
+      </form>
+  </div>
+    
+    
+</body>
+</html>

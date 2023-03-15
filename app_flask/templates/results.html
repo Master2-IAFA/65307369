@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Resultats</title>
+</head>
+<body>
+
+        {% if isSQL == False %}
+            <div class="formContent2">
+
+                <div class="header">
+                    <h1>{{title_form}}</h1>
+                </div>
+                <br> <br> 
+                <div class="content">
+                    <p><strong>{{query}}</strong></p>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <div class="header" style="margin:30px;">
+                        <h1>Le resultat de la requête est : </h1>
+                    </div>
+                    <hr>
+                    <div class="res-content">
+                        {{res|safe}}
+                    </div>
+                </div>
+                
+                <br> <br> 
+                <div class="btnContainer">
+                    <a href="/sqlQuery" class="btn btn-primary stretched-link">SQL Query </a>
+                    <a href="/" class="btn btn-primary stretched-link">Go Back </a>
+                </div>
+
+            </div>
+        {% endif %}
+
+        {% if isSQL == True %}
+
+           
+                <div  style="max-width: 70%;">
+                    <div>
+                        <div class="header" style="margin:30px;">
+                            <h1>{{title_sql}}</h1>
+                        </div>
+                        <hr>
+                        <div class="query-content">
+                            <p><strong>SELECT  </strong>
+                                {% for row in rows %}
+                                        {{row}},
+                                {%endfor%}
+                            </p>
+                            <p><strong>FROM </strong>DF</p>
+                            <p><strong>WHERE  </strong> {{restriction}} </p>
+                        </div>
+                    </div>
+
+                    
+                    <div style="margin-bottom: 30px;">
+                        <div class="header" style="margin:30px;">
+                            <h1>Le resultat de la requête est : </h1>
+                        </div>
+                        <hr>
+                        <div class="res-content">
+                            {{res|safe}}
+                        </div>
+                    </div>
+
+
+                    <div class="btnContainer">
+                        <a href="/" class="btn btn-primary stretched-link">Home</a>
+                        <a href="/sqlQuery" class="btn btn-primary stretched-link">Go Back </a>
+                    </div>
+
+                </div>
+            
+        {% endif %}        
+</body>
+</html>
