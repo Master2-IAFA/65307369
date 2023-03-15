@@ -102,7 +102,7 @@ Diagramme de séquence
 
 ## Datasets
 
-Choix des BDs : Nous avons choisi les bases de données par rapport aux contextes de crise de l’énergie, nous exploiterons donc deux API contenant des données relatives à la consommation gaz et électricité dans différentes régions, le troisième API quant à lui contient des données météorologiques notamment température et humidité sur différents laps de temps
+Choix des BDs : Nous avons choisi les bases de données par rapport aux contextes de crise de l’énergie, nous exploiterons donc deux API contenant des données relatives à la consommation gaz et électricité dans différentes régions, le troisième API quant à lui contient des données de population en France, et le dernier API contient un jeu de données des informations sur les logements en France.
 
 ### Description des APIs
 
