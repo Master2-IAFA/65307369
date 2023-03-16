@@ -100,7 +100,6 @@ Diagramme de séquence
 <img src="./Assets/SOIVD_Sequence_diagram.png">
 
 Diagramme de Gantt
-<img src="./Assets/SOIVD_Gantt_diagram.png">
 
 
 ## Datasets
