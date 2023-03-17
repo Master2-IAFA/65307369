@@ -13,7 +13,6 @@ body {
 .header h1 {
     width: 100%;
     margin: auto;
-    text-align: center;
 }
 
 .header p  {
@@ -38,9 +37,25 @@ body {
     
 }
 
+.res-content {
+    width: 100%; 
+    margin-right: auto;
+    padding: 10px;
+}
+
+.query-content {
+    width: 80%; 
+    margin-right: auto;
+    margin-bottom: 30px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
 .btnContainer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;;
+    margin-bottom: 20px ;
+    margin-top: 30px;
 }
 
 .container {
@@ -49,3 +64,48 @@ body {
     padding: 20px;
 
 }
+
+.infos_container{
+    margin : 50px;
+    padding: 20px;
+}
+
+.formContaint {
+
+    border : 1px solid black;
+    padding: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.formContaint2 {
+
+    border : 1px solid black;
+    width : 100%;
+    margin-left: 25%;
+    padding: 30px;
+
+}
+
+.infosContaint {
+    border : 1px solid black;
+    width : 80%;
+    margin-left: 30%;
+    padding: 20px;
+  
+}
+
+.resContainer {
+        width : 100%;
+        margin-left: 20%;
+}
+
+
+.queryContainer {
+
+    margin-top : 50px;
+    margin-bottom : 50px;
+    
+ }

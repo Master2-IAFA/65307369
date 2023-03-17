@@ -6,15 +6,13 @@ import json
 from pandas import json_normalize
 import time
 import pandas as pd 
-from pandasql import sqldf
 import numpy as np
 import psutil
 import os
-import csv
-import re
+
 
 # import de la classe mediateur 
-from src.mediators import InformationMediator
+from server.mediators import InformationMediator
 
 app = Flask(__name__)
 
@@ -63,14 +61,13 @@ def post_submit_sql():
 
     res = None
     isSQL = True
-    title_sql = "Votre SQL Query est : "
+    title_sql = "La Requête Saisie : "
     rows = []
 
     if request.method == 'POST':
 
         # get the input values 
 
-        region = request.form["region"]
         restriction = request.form['restriction']
 
         if request.form.get('region_row') == "region":
@@ -133,9 +130,9 @@ def post_submit_sql():
             com_arm_code = request.form['com_arm_code']
             rows.append(com_arm_code)
         
-        if request.form.get('com_arm_pop_cap') == "com_arm_pop_cap":
-            com_arm_pop_cap = request.form['com_arm_pop_cap']
-            rows.append(com_arm_pop_cap)
+        # if request.form.get('com_arm_pop_cap') == "com_arm_pop_cap":
+        #     com_arm_pop_cap = request.form['com_arm_pop_cap']
+        #     rows.append(com_arm_pop_cap)
         
         if request.form.get('code_insee_region') == "code_insee_region":
             code_insee_region = request.form['code_insee_region']
@@ -150,13 +147,16 @@ def post_submit_sql():
             rows.append(consommation_brute_totale)
 
 
-        
+
         # construct a Query 
 
         n = len(rows)
-
         # projection
         Query = "SELECT "
+        # if request.form.get('all-rows') == "all-rows":
+        #      Query += "* "
+
+        # else:
         for i in range(n-1):
             Query += rows[i] + ", "
         Query += rows[n-1]
@@ -164,10 +164,7 @@ def post_submit_sql():
         Query += " FROM df "
 
         # restriction
-        #Query += " WHERE " + restriction
-
-        TestQuery="""SELECT region, annee, consommation_brute_electricite_rte, part_logement_sociaux_geres_sem 
-        FROM df """
+        Query += " WHERE " + restriction
 
         # envoi de la requete
         pid = os.getpid()
@@ -181,7 +178,7 @@ def post_submit_sql():
 
     
 
-    return render_template('results.html',region=region, Query = Query, res=Markup(res), restriction=restriction,rows=rows,title_sql=title_sql,isSQL=isSQL)
+    return render_template('results.html', Query = Query, res=Markup(res), restriction=restriction,rows=rows,title_sql=title_sql,isSQL=isSQL)
 
 if __name__ == "__main__":
     app.run(debug=True)

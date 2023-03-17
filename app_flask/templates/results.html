@@ -12,18 +12,19 @@
 <body>
 
         {% if isSQL == False %}
-            <div class="formContent2">
+            <div class="resContainer">
 
-                <div class="header">
+                <div class="header" >
                     <h1>{{title_form}}</h1>
                 </div>
+                <hr>
                 <br> <br> 
-                <div class="content">
+                <div class="query-content">
                     <p><strong>{{query}}</strong></p>
                 </div>
 
-                <div style="margin-bottom: 30px;">
-                    <div class="header" style="margin:30px;">
+                <div>
+                    <div class="header" >
                         <h1>Le resultat de la requête est : </h1>
                     </div>
                     <hr>
@@ -32,10 +33,11 @@
                     </div>
                 </div>
                 
+                <hr>
                 <br> <br> 
-                <div class="btnContainer">
-                    <a href="/sqlQuery" class="btn btn-primary stretched-link">SQL Query </a>
-                    <a href="/" class="btn btn-primary stretched-link">Go Back </a>
+                <div class="btnContainer" >
+                    <a href="/sqlQuery"  style="margin-right: 30px;" class="btn btn-primary stretched-link">Create Query </a>
+                    <a href="/" class="btn btn-primary stretched-link">Defaut Query </a>
                 </div>
 
             </div>
@@ -44,9 +46,9 @@
         {% if isSQL == True %}
 
            
-                <div  style="max-width: 70%;">
+                <div  style="max-width: 70%;" class="resContainer">
                     <div>
-                        <div class="header" style="margin:30px;">
+                        <div class="header" >
                             <h1>{{title_sql}}</h1>
                         </div>
                         <hr>
@@ -62,9 +64,9 @@
                     </div>
 
                     
-                    <div style="margin-bottom: 30px;">
-                        <div class="header" style="margin:30px;">
-                            <h1>Le resultat de la requête est : </h1>
+                    <div>
+                        <div class="header" >
+                            <h1>Resultat de la requête : </h1>
                         </div>
                         <hr>
                         <div class="res-content">
@@ -72,10 +74,11 @@
                         </div>
                     </div>
 
+                    <hr>
 
                     <div class="btnContainer">
-                        <a href="/" class="btn btn-primary stretched-link">Home</a>
-                        <a href="/sqlQuery" class="btn btn-primary stretched-link">Go Back </a>
+                        <a href="/" style="margin-right: 30px;" class="btn btn-primary stretched-link">Default Query</a>
+                        <a href="/sqlQuery" class="btn btn-primary stretched-link">Create Query </a>
                     </div>
 
                 </div>

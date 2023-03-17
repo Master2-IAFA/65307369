@@ -17,34 +17,122 @@
         </div>
         <hr>
         <div class="infos_container">
-            <h3>Description : </h3>
+            <h3>Description des APIs : </h3>
             <p>
                 Vous pouvez accéder à plusieurs informations à la fois sur une ville en écrivant une requete SQL. 
                 Vous trouverez ci-bas (en image) toutes colonnes que vous pouvez utiliser. Nous avons quatre soucre de 
                 données (api) qui sont ensuite intégrer virtuellement dans une seule base de données. 
-                <ul >
-                    <li>API météo : Information météo par ville </li>
-                    <li>API Energie : Information sur la consommation d'energie par ville</li>
-                    <li>API Séisme : Information sur le risque de seisme par ville</li>
-                    <li>API Population : Information Démographiques par ville </li>
-                </ul>  
+  
             </p>
 
-            <div >
-                <h6>Notre systéme ne prend en compte que les opérations de projections et de restrictions : </h6>
-                <p style="border: 1px solid black; width: 300px; padding:20px;">
-                <strong>SELECT</strong> col1,col2,... <br>
-                <strong>FROM </strong>  DF <br>
-                <strong>WHERE </strong>  (your restrictions)<br>
-                </p>
+            <div class="api_description">
+                
+                <strong>Voici la description de quelques colonnes :</strong>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Columns</th>
+                        <th scope="col">Explication</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>consommation_brute_electricite_rte</td>
+                        <td>Consommation brute d'électricité en MW</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>consommation_brute_totale</td>
+                        <td>Consommation brute totale d'énergie en MW</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>consommation_brute_gaz_totale</td>
+                        <td>Consommation brute de gaz en MW</td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>energie_injectee</td>
+                        <td>Quantité d'energie injectée à un instant donné dans une région</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>nb_points_injection</td>
+                        <td>Nombre de points ayant reçu une injection dans une région</td>
+                      </tr> 
+
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>part_logement_sociaux_geres_oph</td>
+                        <td>Part de logements sociaux gérés par des opérateurs OPH (Office Public pour l'Habitat)</td>
+                      </tr>
+                      <tr>
+                        
+                        <th scope="row">7</th>
+                        <td>part_logement_sociaux_geres_esh</td>
+                        <td>Part de logements sociaux gérés par des opérateurs ESH (Entreprises sociales pour l'Habitat)</td>
+                      </tr> 
+                      <tr>
+                        
+                        <th scope="row">8</th>
+                        <td>part_logement_sociaux_geres_sem</td>
+                        <td>Part de logements sociaux gérés par des opérateurs SEM (Société d'Economie Mixte)</td>
+                      </tr> 
+
+                      <tr>
+                        <th scope="row">9</th>
+                        <td>code commune/Arr</td>
+                        <td>Codes Officiels des Communes et Arrondissements</td>
+                      </tr>
+                      <tr>
+                        
+                        <th scope="row">10</th>
+                        <td>nom commune/Arr </td>
+                        <td>Noms Officiels des Communes et Arrondissements</td>
+                      </tr> 
+                      <tr>
+                        <th scope="row">11</th>
+                        <td>arrdep_code</td>
+                        <td>Codes Officiels d'arrondissement et département </td>
+                      </tr>  
+                      <tr>
+                        <th scope="row">12</th>
+                        <td>géo_year</td>
+                        <td>Année de réference géographique </td>
+                      </tr> 
+                      <tr>
+                        <th scope="row">13</th>
+                        <td>start_year</td>
+                        <td>Année de recensement </td>
+                      </tr>    
+                      <tr>
+                        <th scope="row">14</th>
+                        <td>census_year</td>
+                        <td>Année d'entrée en vigueur </td>
+                      </tr>   
+
+                      <tr>
+                        <th scope="row">15</th>
+                        <td>Dep_Code</td>
+                        <td>Code Département</td>
+                      </tr> 
+                  
+                    </tbody>
+                  </table>
             </div>
-            <img src="./static/assets/image.png" alt="alternatetext">
+
+            <hr style="margin:20px;">
+
+           
 
         
         </div>
-        <div class="btnContainer">
-            <a href="/" class="btn btn-primary stretched-link">Home </a>
-            <a href="/sqlQuery" class="btn btn-primary stretched-link">New SQL Query </a>
+        <div class="btnContainer" style="margin-left: 50px;">
+            <a href="/" style="margin-right: 30px;" class="btn btn-primary stretched-link">Default Query </a>
+            <a href="/sqlQuery" class="btn btn-primary stretched-link">Create Query </a>
         </div>
         
     </div>
