@@ -1,0 +1,34 @@
+### Adapter
+
+Ce code Python est divisé en quatre classes, chacune étant un adaptateur pour une API différente.  Voici une explication de chacune de ces classes :
+
+EnergyAdapter1 : cet adaptateur est utilisé pour la première API sur l'énergie. Il possède une URL de base qui est utilisée pour accéder aux données de l'API. Il contient également une liste de noms de colonnes qui seront utilisés pour extraire les données des champs appropriés de la réponse JSON.  La méthode "get_energy_production" récupère les données de l'API et les formate en un DataFrame pandas.
+
+EnergyAdapter2 : cet adaptateur est utilisé pour la deuxième API sur l'énergie. Il utilise la même liste de colonnes que l'EnergyAdapter1, mais avec une URL différente. La méthode "get_energy_production" appelle la méthode correspondante dans EnergyAdapter1 et retourne le DataFrame résultant.
+
+PopulationAdapter : cet adaptateur est utilisé pour l'API sur la population. Il contient une URL de base et une liste de noms de colonnes pour extraire les données pertinentes de la réponse JSON. La méthode "get_population" appelle la méthode "get_energy_production" dans EnergyAdapter1 et renomme la colonne "reg_name" en "region" et récupérer les données correspondantes.
+
+LogementAdapter : cet adaptateur est utilisé pour l'API sur les logements sociaux. La méthode "API_Logement_sociaux_bailleurs" récupère les données de l'API qui concerne le logments et les bailleurs les formate en un DataFrame pandas.
+
+En résumé, chaque adaptateur est responsable de récupérer les données d'une API spécifique et de les formater en un DataFrame pandas. Les méthodes dans les adaptateurs sont conçues pour être modulaires et réutilisables afin de faciliter l'ajout de nouvelles API à l'application.
+
+
+
+### Mediator
+Ce code crée une classe InformationMediator qui sert de médiateur entre quatre sources de données d'API différentes (API1, API2, API3 et API4), en sélectionnant les données selon des conditions de requête spécifiques et en retournant les données sélectionnées.
+
+Les méthodes de la classe InformationMediator :
+
+init() : initialise quatre objets de classe adapter (EnergyAdapter1(), EnergyAdapter2(), PopulationAdapter() et LogementAdapter()), qui servent à récupérer les données de chaque API.
+
+get_API1_data() : renvoie les données de API1. 
+get_API2_data() : renvoie les données de API2. 
+get_API3_data() : renvoie les données de API3. 
+get_API4_data() : renvoie les données de API4.
+
+La fonction "restriction" prend en entrée 5 arguments : "Query" qui représente une requête SQL, et les 4 dataframes "df1", "df2", "df3" et "df4". L'objectif de cette fonction est de filtrer les données de chaque dataframe en utilisant les conditions spécifiées dans la requête SQL. La première étape consiste à extraire les conditions de la requête SQL en utilisant les expressions "WHERE" et "". Ensuite, la fonction utilise des expressions régulières pour identifier les opérateurs de comparaison dans chaque condition, tels que "<", ">", "=", "!=", "<=", ">=", etc. Ensuite, la fonction parcourt chaque condition et extrait le nom de colonne et l'opérateur de comparaison. En fonction du nom de la colonne, chaque condition est attribuée à un dataframe particulier, en suivant une série de règles conditionnelles. Si la colonne est présente dans plusieurs dataframes, la condition est attribuée à chaque dataframe concerné. Une fois que chaque condition a été attribuée à un dataframe, la fonction construit une requête SQL pour chaque dataframe en utilisant les conditions correspondantes. Enfin, elle exécute ces requêtes SQL et renvoie les dataframes filtrés.
+
+La  méthode nommée "projection"  commence par extraire les noms de colonnes de la requête SQL à l'aide des chaînes de caractères "SELECT" et "FROM". Elle stocke ensuite ces noms de colonnes dans une liste appelée "cols_in_query". Ensuite, la méthode parcourt chaque mot dans la liste "cols_in_query" et l'ajoute à l'une des quatre listes fournies en entrée en fonction de son appartenance à l'une ou plusieurs de ces listes. Si le mot se trouve dans les quatre listes, 
+il est ajouté aux quatre listes (list_api1, list_api2, list_api3 et list_api4). S'il se trouve dans trois listes, il est ajouté à ces trois listes, et ainsi de suite. Finalement, la méthode retourne les quatre listes mises à jour.
+
+ La méthode de jointure  prend en entrée quatre DataFrames ("df1", "df2", "df3" et "df4"), ainsi que quatre listes de noms des colonnes de chaque API correspondant à chaque DataFrame ("list_api1", "list_api2", "list_api3" et "list_api4"). La méthode effectue des jointures entre les DataFrames en fonction des listes d'API fournies. La méthode commence par vérifier quelle combinaison de listes d'API est fournie et effectue la jointure appropriée en conséquence. La méthode renvoie le DataFrame résultant de la jointure.
