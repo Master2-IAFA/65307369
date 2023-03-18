@@ -74,23 +74,23 @@ pip install dateutil
 
 ## Packages
 
-json : https://docs.python.org/2/library/json.html
+- json : https://docs.python.org/2/library/json.html
 
-requests : https://fr.python-requests.org/en/latest/
+- requests : https://fr.python-requests.org/en/latest/
 
-dateutil : https://dateutil.readthedocs.io/en/stable/
+- dateutil : https://dateutil.readthedocs.io/en/stable/
 
-pandas : https://pandas.pydata.org/docs/
+- pandas : https://pandas.pydata.org/docs/
 
-pandasql : https://pypi.org/project/pandasql/
+- pandasql : https://pypi.org/project/pandasql/
 
-termcolor : https://pypi.org/project/termcolor/
+- termcolor : https://pypi.org/project/termcolor/
 
-urllib : https://docs.python.org/fr/3/library/urllib.html
+- urllib : https://docs.python.org/fr/3/library/urllib.html
 
-BeautifulSoup : https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- BeautifulSoup : https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 
-contextlib : https://docs.python.org/3/library/contextlib.html
+- contextlib : https://docs.python.org/3/library/contextlib.html
 
 ## Conception
 La figure ci-dessus représente l’architecture adoptée pour la réalisation du présent projet. Il s’agit d’une architecture Adaptateur-Médiateur dont on va utiliser l’approche GAV
@@ -98,8 +98,6 @@ La figure ci-dessus représente l’architecture adoptée pour la réalisation d
 
 Diagramme de séquence
 <img src="./Assets/SOIVD_Sequence_diagram.png">
-
-Diagramme de Gantt
 
 
 ## Datasets
@@ -139,9 +137,17 @@ Choix des BDs : Nous avons choisi les bases de données par rapport aux contexte
 ![alt text](https://imagizer.imageshack.com/img922/8676/2o56BP.png)
 ![alt text](https://imagizer.imageshack.com/img923/2163/d1oSyG.png)
 ## Références:
- - Anaconda : https://www.anaconda.com/products/distribution
- - Flask : https://flask.palletsprojects.com/en/2.2.x/
- - Environnement vituel : https://pypi.org/project/virtualenv/ && https://anaconda.org/conda-forge/virtualenv
+- [1] S. A. Y. P. V. S. S. Adah, «Query Caching and Optimization in Distributed Mediator Systems,» SIGMOD, p. 12, 1996.
+- [2] A. R. J. O. Alon Halevy, «Data Integration: The Teenage Years,» VLDB Endowment, p. 8, 2006.
+- [3] A. H. G. M. W.-C. T. Behzad Golshan, «Data Integration: After the Teenage Years,» PODS’17, p. 6, 2017.
+- [4] P. K. P. S. G. A. A. J. R. B. S. D. G. H. L. P. M. S. M. E. P. H. Z. AnHai Doan, «Toward a System Building Agenda for Data Integration (and Data Science),» IEEE, p. 12.
+- [5] G. Wiederhold, «Mediators in the Architecture of Future Information Systems,» IEEE, p. 38, 1991.
+- [6] Api de logements sociaux et bailleurs par région : https://opendata.caissedesdepots.fr/pages/pagehomerefonte/ 
+- [7] Api energie 1 :consommation quotidienne brute r ́egional electricit ́e ou de gaz : https://opendata.agenceore.fr/explore/dataset/conso-elec-gaz-annuelle-par-secteur-dactivite-agregee-epci/information/ 
+- [8] Api energie 2 : Production demi-horaire agrégée par région : https://odre.opendatasoft.com/explore/dataset/conso-epci-annuelle/ 
+- [9] Api population : informations démographiques sur les communes en France : https://public.opendatasoft.com/explore/dataset/population-francaise-communes/ 
+- [10] Flask framework : https://flask.palletsprojects.com/en/2.2.x/ 
+- [11] Anaconda distribution : https://docs.anaconda.com/anaconda/ 
 
 
 
