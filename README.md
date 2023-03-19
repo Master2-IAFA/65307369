@@ -138,7 +138,6 @@ Choix des Bases de données : Nous avons choisi les bases de données par rappor
 #### Exploration de l'architecture du projet flask 
  - Dossier static : contient tous les fichiers de style et les images si vous aurez besoin
  - Dossier templates : contient tous les fichiers html pour la partie front-end du projet
- - Fichier app.py : pour définir le logique et les endpoints
 #### Exécution de l'app Flask
  - Dans la commande prompt d'anaconda : 
      1) set FLASK_APP=app.py
