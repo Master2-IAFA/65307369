@@ -37,10 +37,15 @@ l’énergie et la météo afin d’apporter une analyse du contexte actuel de c
 d'énergies.
 ##### Contexte
 ● Intégration virtuelle de données provenant de plusieurs sources, où qu'elles se trouvent.  
+
 ● Évolution vers de grosses quantités de données (Big Data).
+
 ● Plusieurs sources d’informations (SGBD relationnels, fichiers, applications, pages Web ...)    
+
 ● Des données de plus en plus hétérogènes et interfaces d’accès variées (langages d’interrogation, modèle de données, interface de l'application pour l'utilisateur)
+
 ● Exploration de l'architecture médiateur/adaptateur.
+
 ● Optimisation des requêtes et le choix de la méthode performante.
 
 
