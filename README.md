@@ -54,6 +54,7 @@ Un accès uniforme à des sources multiples, autonomes et hétérogènes et stru
 - Flask
 - Pandas
 - APIs
+- HTML/CSS
 
 ## Installation
 
@@ -66,6 +67,7 @@ OR
 Use the package manager `pip` to install 
 
 ```bash
+pip install flask
 pip install pandasql
 pip install contextlib
 pip install bs4
@@ -92,8 +94,10 @@ pip install dateutil
 
 - contextlib : https://docs.python.org/3/library/contextlib.html
 
+- flask : https://flask.palletsprojects.com/en/2.2.x/
+
 ## Conception
-La figure ci-dessus représente l’architecture adoptée pour la réalisation du présent projet. Il s’agit d’une architecture Adaptateur-Médiateur dont on va utiliser l’approche GAV
+La figure ci-dessus représente l'architecture adoptée pour la réalisation du présent projet. Il s'agit d'une architecture Adaptateur-Médiateur dont nous allons utiliser l'approche GAV
 <img src="./Assets/SOIVD_Global_architecture.png">
 
 Diagramme de séquence
@@ -102,7 +106,7 @@ Diagramme de séquence
 
 ## Datasets
 
-Choix des BDs : Nous avons choisi les bases de données par rapport aux contextes de crise de l’énergie, nous exploiterons donc deux API contenant des données relatives à la consommation gaz et électricité dans différentes régions, le troisième API quant à lui contient des données de population en France, et le dernier API contient un jeu de données des informations sur les logements en France.
+Choix des Bases de données : Nous avons choisi les bases de données par rapport aux contextes de crise de l’énergie, nous exploiterons donc deux API contenant des données relatives à la consommation gaz et électricité dans différentes régions, le troisième API quant à lui contient des données de population en France, et le dernier API contient un jeu de données des informations sur les logements en France.
 
 ### Description des APIs
 
@@ -119,7 +123,7 @@ Choix des BDs : Nous avons choisi les bases de données par rapport aux contexte
 ## Mise en place de l'environnement Flask
  - Création d'un environnement virtuel soit avec anaconda soit avec la commande -m venv <environment name> sous python
  - Dans le cas où l'env virtuel est crée par Anaconda, il faut spécifier dans le anaconda prompt : conda activate <environment name>
- - Pointer sur le dossier API_ConsommationElectriciteGaz (./API_ConsommationElectriciteGaz)
+ - Pointer sur le dossier  (./API_ConsommationElectriciteGaz)
  - Installer les bibliothèques nécessaires dans le fichier requirements.txt (Flask, requests, json, ...)
 #### Exploration de l'architecture du projet flask 
  - Dossier static : contient tous les fichiers de style et les images si vous aurez besoin
