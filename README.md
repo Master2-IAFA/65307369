@@ -36,9 +36,15 @@ Données – SOIVD qui exploitera différentes bases de données en relation ave
 l’énergie et la météo afin d’apporter une analyse du contexte actuel de crise
 d'énergies.
 ##### Contexte
-● Évolution vers de grosses quantités de données (Big Data)     
+● Intégration virtuelle de données provenant de plusieurs sources, où qu'elles se trouvent.  
+● Évolution vers de grosses quantités de données (Big Data).
 ● Plusieurs sources d’informations (SGBD relationnels, fichiers, applications, pages Web ...)    
-● Des données de plus en plus hétérogènes et interfaces d’accès variées (langages d’interrogation, modèle de données, interfaces d’appel …)   
+● Des données de plus en plus hétérogènes et interfaces d’accès variées (langages d’interrogation, modèle de données, interface de l'application pour l'utilisateur)
+● Exploration de l'architecture médiateur/adaptateur.
+● Optimisation des requêtes et le choix de la méthode performante.
+
+
+
 
 ##### Solution proposée  
 Un Système Optimisé d’Intégration Virtuelle De Données - SOIVD avec une
@@ -46,14 +52,13 @@ architecture médiateur-adaptateur et une capacité d’intégration de plusieur
 de données hétérogènes.
 
 ##### Objectif
-Un accès uniforme à des sources multiples, autonomes et hétérogènes et structurés
-
+Accéder de manière uniforme à des sources multiples, autonomes, hétérogènes et structurées.
 
 #### Built With
 - Python
-- Flask
-- Pandas
+- Pandas (pandasql)
 - APIs
+- Flask
 - HTML/CSS
 
 ## Installation
