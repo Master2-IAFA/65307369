@@ -123,7 +123,7 @@ Choix des Bases de données : Nous avons choisi les bases de données par rappor
 ## Mise en place de l'environnement Flask
  - Création d'un environnement virtuel soit avec anaconda soit avec la commande -m venv <environment name> sous python
  - Dans le cas où l'env virtuel est crée par Anaconda, il faut spécifier dans le anaconda prompt : conda activate <environment name>
- - Pointer sur le dossier  (./API_ConsommationElectriciteGaz)
+ - Pointer sur le dossier api_flask  (./api_flask)
  - Installer les bibliothèques nécessaires dans le fichier requirements.txt (Flask, requests, json, ...)
 #### Exploration de l'architecture du projet flask 
  - Dossier static : contient tous les fichiers de style et les images si vous aurez besoin
